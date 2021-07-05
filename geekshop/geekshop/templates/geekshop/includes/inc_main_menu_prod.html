@@ -3,7 +3,21 @@
 	<ul class="menu">
 		<li><a href="{% url 'index' %}">домой</a></li>
 		<li><a href="{% url 'products:index' %}" class="active">продукты</a></li>
-		<li><a href="{% url 'contacts' %}">контакты</a></li>
+		<li><a href="{% url 'contacts' %}" style="margin-right: 50px" >контакты</a></li>
+		{% if user.is_authenticated %}
+			<li>
+				<a href="{% url 'auth:edit' %}">
+					{{ user.first_name|default:'пользователь' }}
+				</a>
+			</li>
+		{% endif %}
+			<li>
+				{% if user.is_authenticated %}
+				  <a href="{% url 'auth:logout' %}" style="margin-right: 20px">выйти</a>
+				{% else %}
+				  <a href="{% url 'auth:login' %}" style="margin-right: 20px">войти</a>
+				{% endif %}
+			</li>
 	</ul>
 	<a href="#" class="search"></a>
 	<a href="#" class="basket"></a>
