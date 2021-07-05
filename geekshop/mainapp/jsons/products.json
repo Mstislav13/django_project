@@ -1,0 +1,128 @@
+[
+  {
+      "category": "Дом",
+      "name": "Красный стул",
+      "image": "product_images/product-4.jpg",
+      "short_desc": "Красивый стул",
+      "description": "",
+      "price": "1860.00",
+      "quantity": 18
+  },
+  {
+      "category": "Офис",
+      "name": "Лампа-сфера",
+      "image": "product_images/product-1.jpg",
+      "short_desc": "Нежный ламповый свет",
+      "description": "",
+      "price": "2590.00",
+      "quantity": 10
+  },
+  {
+      "category": "Классика",
+      "name": "Кресло из белой кожи",
+      "image": "product_images/product-270.jpg",
+      "short_desc": "Классический дизайн",
+      "description": "",
+      "price": "11500.00",
+      "quantity": 15
+  },
+  {
+      "category": "Дом",
+      "name": "Бра",
+      "image": "product_images/product-41_270.jpg",
+      "short_desc": "Лампа настенная",
+      "description": "",
+      "price": "15000.00",
+      "quantity": 11
+  },
+  {
+      "category": "Модерн",
+      "name": "Ваза",
+      "image": "product_images/product-6_270.jpg",
+      "short_desc": "Керамическая ваза",
+      "description": "",
+      "price": "10000.00",
+      "quantity": 20
+  },
+  {
+      "category": "Офис",
+      "name": "Люстра",
+      "image": "product_images/product-11_270.jpg",
+      "short_desc": "Люстра подвесная",
+      "description": "",
+      "price": "12000.00",
+      "quantity": 35
+  },
+  {
+      "category": "Офис",
+      "name": "Офисное кресло",
+      "image": "product_images/promo-img270.jpg",
+      "short_desc": "Очень удобное",
+      "description": "",
+      "price": "19000.00",
+      "quantity": 14
+  },
+  {
+      "category": "Дом",
+      "name": "Синий стул",
+      "image": "product_images/product-2.jpg",
+      "short_desc": "Красивый стул",
+      "description": "",
+      "price": "1830.00",
+      "quantity": 19
+  },
+  {
+      "category": "Офис",
+      "name": "Лампа-сферическая",
+      "image": "product_images/product-5-sm.jpg",
+      "short_desc": "Нежный ламповый свет",
+      "description": "",
+      "price": "2690.00",
+      "quantity": 16
+  },
+  {
+      "category": "Классика",
+      "name": "Кресло из белой кожи крокодила",
+      "image": "product_images/product_55_270.jpg",
+      "short_desc": "Крокодильный дизайн",
+      "description": "",
+      "price": "110500.00",
+      "quantity": 25
+  },
+  {
+      "category": "Дом",
+      "name": "Лампа - Бра",
+      "image": "product_images/product_76_270.jpg",
+      "short_desc": "Лампа настенная",
+      "description": "",
+      "price": "15500.00",
+      "quantity": 21
+  },
+  {
+      "category": "Модерн",
+      "name": "Вазон",
+      "image": "product_images/product-3.jpg",
+      "short_desc": "Стеклянная ваза",
+      "description": "",
+      "price": "10900.00",
+      "quantity": 25
+  },
+  {
+      "category": "Офис",
+      "name": "Люстра - люкс",
+      "image": "product_images/product-5-sm.jpg",
+      "short_desc": "Мягкий свет",
+      "description": "",
+      "price": "13000.00",
+      "quantity": 29
+  },
+  {
+      "category": "Офис",
+      "name": "Кресло",
+      "image": "product_images/product_39_270.jpg",
+      "short_desc": "Очень удобное",
+      "description": "",
+      "price": "20000.00",
+      "quantity": 16
+  }
+]
