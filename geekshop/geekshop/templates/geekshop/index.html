@@ -20,7 +20,7 @@
 			<div class="featured-menu">
 					<a class="active" href="#">Популярные</a><a href="#">Новинки</a>
 			</div>
-			<a class="explore" href="#">показать все <img src="/static/geekshop/img/arrow.png" alt=""></a>
+			<a class="explore" href="#">показать все <img src="{% static 'geekshop/img/arrow.png' %}" alt=""></a>
 			<div class="clearfix">
 			</div>
 			<div class="tab-content">
@@ -28,7 +28,7 @@
 					<div class="block">
 						<a href="#"><img src="/media/{{product.image}}" alt="img">
 							<div class="text">
-								<img src="/static/geekshop/img/icon-hover.png" alt="img">
+								<img src="{% static 'geekshop/img/icon-hover.png' %}" alt="img">
 								<h4>{{product.name}}</h4>
 								<p>{{product.short_desc}}</p>
 							</div>

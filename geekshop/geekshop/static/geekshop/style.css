@@ -1041,6 +1041,12 @@ td:first-child {
 	float: none;
 	margin-top: 80px;
 }
-.related-products a:hover .text{
+.related-products a:hover .text {
 	display: block;
+}
+.row {
+    margin-top: 20px;
+}
+.bask_quan .bask_n{
+    text-align: center;
 }
