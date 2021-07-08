@@ -9,10 +9,12 @@ class Basket(models.Model):
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
         related_name='basket',
+        verbose_name='пользователь',
     )
     product = models.ForeignKey(
         Product,
         on_delete=models.CASCADE,
+        verbose_name='товар',
     )
     quantity = models.PositiveIntegerField(
         verbose_name='количество',
@@ -22,3 +24,10 @@ class Basket(models.Model):
         verbose_name='время',
         auto_now_add=True,
     )
+
+    def __str__(self):
+         return f"Товар в корзине - {self.pk}"
+
+    class Meta:
+         verbose_name = 'корзина'
+         verbose_name_plural = 'товар в корзине'

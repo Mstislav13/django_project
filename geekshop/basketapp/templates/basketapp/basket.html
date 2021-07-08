@@ -19,9 +19,9 @@
                     <tbody>
                     {% for item in basket %}
                         <tr>
-                            <th class="bask_n" scope="row">{{ forloop.counter }}</th>
+                            <th scope="row" style="text-align: center">{{ forloop.counter }}</th>
                             <td>{{ item.product }}</td>
-                            <td class="bask_quan">{{ item.quantity }}</td>
+                            <td style="text-align: center">{{ item.quantity }}</td>
                         </tr>
                     {% endfor %}
 
