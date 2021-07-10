@@ -78,16 +78,25 @@ html, body {
 	background-image: url(img/search.png);
 	position: absolute;
 	top: 63px;
-	left: 1176px;
+	left: 1120px;
 }
 .basket {
 	display: block;
-	width: 23px;
-	height: 23px;	
-	background-image: url(img/basket.png);
+	width: 130px;
+	height: 23px;
 	position: absolute;
 	top: 63px;
-	left: 1225px;
+	left: 1185px;
+}
+
+.basket_img {
+	display: block;
+	width: 23px;
+	height: 23px;
+ 	background-image: url(img/basket.png);
+	position: absolute;
+	top: 63px;
+	left: 1160px;
 }
 
 .clearfix:after {
@@ -893,7 +902,8 @@ td:first-child {
 	padding-left: 98px;
 	padding-right: 98px;
 	margin-top: 98px;
-	height: 651px; 
+	height: 651px;
+	display: flex;
 }
 .details-slider {
 	width: 570px;
@@ -997,6 +1007,7 @@ td:first-child {
 }
 .related-products {
 	margin-bottom: 120px;
+	display: flex;
 }
 .related-products .block a img {
 	float: left;
