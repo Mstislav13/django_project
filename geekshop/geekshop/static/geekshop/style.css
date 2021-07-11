@@ -71,22 +71,26 @@ html, body {
 	border-bottom: 3px solid #212121;
 }
 
+.in_out {
+    margin-right: 0px;
+}
+
 .search {
 	display: block;
 	width: 23px;
 	height: 23px;	
 	background-image: url(img/search.png);
 	position: absolute;
-	top: 63px;
-	left: 1120px;
+	top: 65px;
+	left: 900px;
 }
 .basket {
 	display: block;
-	width: 130px;
+	width: 175px;
 	height: 23px;
 	position: absolute;
-	top: 63px;
-	left: 1185px;
+	top: 60px;
+	left: 1125px;
 }
 
 .basket_img {
@@ -95,8 +99,12 @@ html, body {
 	height: 23px;
  	background-image: url(img/basket.png);
 	position: absolute;
-	top: 63px;
-	left: 1160px;
+	top: 65px;
+	left: 1095px;
+}
+
+.basket_summary {
+    margin-bottom: 100px;
 }
 
 .clearfix:after {
@@ -569,7 +577,7 @@ html, body {
 	position: absolute;
 	z-index: 2;
 	top: 10px;
-    right: 50px;
+    right: 75px;
     color: #6c6c6c;
 }
 .text-footer {
@@ -722,6 +730,7 @@ td:first-child {
 
 .location {
 	padding: 0px 97px;
+	display: flex;
 }
 .location-1 {
 	height: 368px;
@@ -746,6 +755,10 @@ td:first-child {
 	font-size: 22px;
 	font-weight: 700;
 	line-height: 16px;
+}
+
+.top_contacts {
+    margin-right: 160px;
 }
 
 .contacts {
@@ -1060,4 +1073,7 @@ td:first-child {
 }
 .bask_c {
     text-align: center;
+}
+.clearfix_footer {
+    display: flex;
 }
