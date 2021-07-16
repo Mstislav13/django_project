@@ -42,6 +42,12 @@ html, body {
 	list-style-type: none;
 	margin-top: 67px;
 	float: right;
+	position: absolute;
+	left: 454px;
+}
+
+.admin_ml{
+    margin-left: 168px;
 }
 .menu li {
 	float: left;
@@ -81,15 +87,15 @@ html, body {
 	height: 23px;	
 	background-image: url(img/search.png);
 	position: absolute;
-	top: 65px;
-	left: 800px;
+	top: 20px;
+	left: 1060px;
 }
 .basket {
 	display: block;
 	width: 175px;
 	height: 23px;
 	position: absolute;
-	top: 60px;
+	top: 5px;
 	left: 1125px;
 }
 
@@ -99,7 +105,7 @@ html, body {
 	height: 23px;
  	background-image: url(img/basket.png);
 	position: absolute;
-	top: 65px;
+	top: 20px;
 	left: 1095px;
 }
 
@@ -758,7 +764,7 @@ td:first-child {
 }
 
 .top_contacts {
-    margin-right: 160px;
+    margin-right: 80px;
 }
 
 .contacts {
