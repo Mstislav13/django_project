@@ -60,10 +60,6 @@ a {
     overflow: hidden
 }
 
-.header_img img {
-    width: 65px
-}
-
 .l-navbar {
     position: fixed;
     top: 0;
@@ -147,6 +143,10 @@ a {
     height: 100vh
 }
 
+.category_record.not_active {
+    opacity: 0.5;
+}
+
 @media screen and (min-width: 768px) {
     body {
         margin: calc(var(--header-height) + 1rem) 0 0 0;
@@ -164,7 +164,7 @@ a {
     }
 
     .header_img img {
-        width: 45px
+        width: 65px
     }
 
     .l-navbar {
@@ -178,5 +178,9 @@ a {
 
     .body-pd {
         padding-left: calc(var(--nav-width) + 188px)
+    }
+
+    .category_record.not_active {
+        opacity: 0.5;
     }
 }
