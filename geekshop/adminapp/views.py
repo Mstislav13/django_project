@@ -47,17 +47,17 @@ def user_update(request, pk):
     edit_user = get_object_or_404(ShopUser, pk=pk)
 
     if request.method == 'POST':
-        user_form = ShopUserAdminEditForm(request.POST, request.FILES)
+        edit_form = ShopUserAdminEditForm(request.POST, request.FILES, instance=edit_user)
 
-        if user_form.is_valid():
-            user_form.save()
+        if edit_form.is_valid():
+            edit_form.save()
             return HttpResponseRedirect(reverse('admin_staff:user_update', args=[edit_user.pk]))
     else:
-        user_form = ShopUserAdminEditForm(instance=edit_user)
+        edit_form = ShopUserAdminEditForm(instance=edit_user)
 
     context = {
         'title': title,
-        'user_form': user_form,
+        'user_form': edit_form,
     }
     return render(request, 'adminapp/user_update.html', context)
 
@@ -98,6 +98,8 @@ def categories(request):
 def category_create(request):
     title = 'категории/создать'
 
+    category = get_object_or_404(ProductCategory)
+
     if request.method == 'POST':
         category_form = ProductCategoryEditForm(request.POST, request.FILES)
 
@@ -110,7 +112,8 @@ def category_create(request):
 
     context = {
         'title': title,
-        'category_form': category_form,
+        'update_form': category_form,
+        'category': category,
     }
     return render(request, 'adminapp/category_create.html', context)
 
@@ -118,21 +121,22 @@ def category_create(request):
 def category_update(request, pk):
     title = 'категории/редактировать'
 
-    edit_form = get_object_or_404(ProductCategory, pk=pk)
+    edit_category = get_object_or_404(ProductCategory, pk=pk)
 
     if request.method == 'POST':
-        edit_form = ProductCategoryEditForm(request.POST, request.FILES, instance=edit_form)
+        edit_form = ProductCategoryEditForm(request.POST, request.FILES, instance=edit_category)
 
         if edit_form.is_valid():
             edit_form.save()
 
-            return HttpResponseRedirect(reverse('admin_staff:category_update', args=[edit_form.pk]))
+            return HttpResponseRedirect(reverse('admin_staff:category_update', args=[edit_category.pk]))
     else:
-        edit_form = ProductCategoryEditForm(instance=edit_form)
+        edit_form = ProductCategoryEditForm(instance=edit_category)
 
     context = {
         'title': title,
-        'category_form': edit_form,
+        'update_form': edit_form,
+        'category': edit_category,
     }
     return render(request, 'adminapp/category_update.html', context)
 
@@ -146,7 +150,7 @@ def category_delete(request, pk):
         category.is_deleted = True
         category.is_active = False
         category.save()
-        return HttpResponseRedirect(reverse('admin_staff:categories', args=[category.pk]))
+        return HttpResponseRedirect(reverse('admin_staff:categories'))
 
     context = {
         'title': title,
