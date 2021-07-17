@@ -270,9 +270,11 @@ html, body {
 	letter-spacing: 3px;
 	text-decoration: none;
 }
+
 .explore:hover {
 	border-bottom: 3px solid #212121;
 }
+
 .explore:active {
 	color: #6c6c6c;
 	border-bottom: 3px solid #6c6c6c;
@@ -282,13 +284,16 @@ html, body {
 	margin-top: 50px;
 	display: flex;
 	justify-content: center;
-	margin-bottom: 120px;
+	margin-bottom: 0px;
+	flex-wrap: wrap-reverse;
 }
+
 .tab-content .block {
 	height: 270px;
 	width: 270px;
 	position: relative;
 }
+
 .tab-content a .text {
 	display: none;
 	height: 268px;
@@ -570,12 +575,14 @@ html, body {
 	background-color: #f7f7f7;
 	padding-left: 99px;
 	padding-right: 98px;
-	margin: -384px auto 0;
+	margin: -330px auto 0;
 	clear: both;
 }
+
 .footer form {
 	position: relative;
 }
+
 .footer form a i {
 	display: block;
 	width: 21px;

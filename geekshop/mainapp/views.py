@@ -24,10 +24,10 @@ def products(request, pk=None):
     basket = get_basket(request.user)
 
     hot_product = get_hot_product()
-    same_products = get_same_products(hot_product)
+    same_products = get_same_products(hot_product)[:3]
 
     links_menu = ProductCategory.objects.all()
-    products = Product.objects.all().order_by('price')
+    products = Product.objects.all().order_by('price')[:6]
 
     if pk is not None:
         if pk == 0:
