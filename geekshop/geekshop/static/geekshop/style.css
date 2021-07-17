@@ -940,12 +940,14 @@ td:first-child {
 	width: 570px;
 	height: 570px;
 }
+
 .slider-control {
 	width: 420px;
 	height: 70px;
-	margin: 11px auto 0px;
-	padding-left: 150px
+	margin-top: 20px;
+    margin-left: 180px;
 }
+
 .slider-control .block {
 	height: 70px;
 	width: 70px;
@@ -1032,7 +1034,7 @@ td:first-child {
 	margin-top: 262px;
 }
 .related-products {
-	margin-bottom: 120px;
+	margin-bottom: 0px;
 	display: flex;
 }
 .related-products .block a img {
@@ -1089,4 +1091,8 @@ td:first-child {
 }
 .clearfix_footer {
     display: flex;
+}
+
+.www {
+    width: 100%!important;
 }

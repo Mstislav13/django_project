@@ -16,10 +16,23 @@
 	letter-spacing: 6px;
 	margin-top: 31px;
 }
+
 .red-button:hover {
 	box-shadow: none;
 }
+
 .red-button:active {
 	box-shadow: none;
 	background-color: #d41306;
+}
+
+.slider-product {
+    width: 100%;
+}
+
+.slider-control {
+	width: 420px;
+	height: 70px;
+	margin-top: 20px;
+    margin-left: 180px;
 }
