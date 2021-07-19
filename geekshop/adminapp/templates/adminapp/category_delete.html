@@ -9,6 +9,7 @@
           method="post" enctype="multipart/form-data">
 
       {% csrf_token %}
+      {{ category_form.as_p }}
 
       <input class="btn btn-danger" type="submit" value="Удалить">
     </form>
