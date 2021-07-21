@@ -47,8 +47,9 @@ class UsersListView(ListView):
 class UserCreateView(CreateView):
     model = ShopUser
     form_class = ShopUserRegisterForm
+    context_object_name = 'user_form'
     template_name = 'adminapp/user_create.html'
-    success_url = '/'
+    success_url = '/admin_staff/users/read'
 
     @method_decorator(user_passes_test(lambda u: u.is_superuser))
     def dispatch(self, *args, **kwargs):
@@ -81,8 +82,9 @@ class UserCreateView(CreateView):
 class UserUpdateView(UpdateView):
     model = ShopUser
     form_class = ShopUserAdminEditForm
+    context_object_name = 'user_form'
     template_name = 'adminapp/user_update.html'
-    success_url = '/'
+    success_url = '/admin_staff/users/read'
 
     @method_decorator(user_passes_test(lambda u: u.is_superuser))
     def dispatch(self, *args, **kwargs):
@@ -118,7 +120,7 @@ class UserDeleteView(DeleteView):
     model = ShopUser
     template_name = 'adminapp/user_delete.html'
     context_object_name = 'user_to_delete'
-    success_url = '/'
+    success_url = '/admin_staff/users/read'
 
     @method_decorator(user_passes_test(lambda u: u.is_superuser))
     def dispatch(self, *args, **kwargs):
@@ -193,7 +195,7 @@ class CategoryCreateView(CreateView):
     model = ProductCategory
     template_name = 'adminapp/category_delete.html'
     form_class = ProductCategoryEditForm
-    success_url = '/'
+    success_url = '/admin_staff/categories/read'
 
     @method_decorator(user_passes_test(lambda u: u.is_superuser))
     def dispatch(self, *args, **kwargs):
@@ -229,7 +231,7 @@ class CategoryUpdateView(UpdateView):
     model = ProductCategory
     template_name = 'adminapp/category_delete.html'
     form_class = ProductCategoryEditForm
-    success_url = '/'
+    success_url = '/admin_staff/categories/read'
 
     @method_decorator(user_passes_test(lambda u: u.is_superuser))
     def dispatch(self, *args, **kwargs):
@@ -266,7 +268,7 @@ class CategoryDeleteView(DeleteView):
     model = ProductCategory
     template_name = 'adminapp/category_delete.html'
     context_object_name = 'category_to_delete'
-    success_url = '/'
+    success_url = '/admin_staff/categories/read'
 
     @method_decorator(user_passes_test(lambda u: u.is_superuser))
     def dispatch(self, *args, **kwargs):
@@ -426,7 +428,7 @@ class ProductDeleteView(DeleteView):
     model = Product
     template_name = 'adminapp/product_delete.html'
     context_object_name = 'product_to_delete'
-    success_url = '/'
+    success_url = '/admin_staff/categories/read'
 
     @method_decorator(user_passes_test(lambda u: u.is_superuser))
     def dispatch(self, *args, **kwargs):
