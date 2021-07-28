@@ -17,7 +17,7 @@ class UsersListView(ListView):
     model = ShopUser
     template_name = 'adminapp/users.html'
     context_object_name = 'objects'
-    paginate_by = 3
+    paginate_by = 5
 
     @method_decorator(user_passes_test(lambda u: u.is_superuser))
     def dispatch(self, *args, **kwargs):
@@ -162,7 +162,7 @@ class CategoryListView(ListView):
     model = ProductCategory
     template_name = 'adminapp/categories.html'
     context_object_name = 'objects'
-    paginate_by = 4
+    paginate_by = 5
 
     @method_decorator(user_passes_test(lambda u: u.is_superuser))
     def dispatch(self, *args, **kwargs):
@@ -310,7 +310,7 @@ class ProductsListView(ListView):
     model = Product
     template_name = 'adminapp/products.html'
     context_object_name = 'objects'
-    paginate_by = 4
+    paginate_by = 5
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(ProductsListView, self).get_context_data(**kwargs)
