@@ -18,7 +18,7 @@ def basket(request):
         context = {
             'basket': basket
         }
-        return render(request, 'basketapp/basket.html', context)
+        return render(request, 'basketapp/order_list.html', context)
 
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 

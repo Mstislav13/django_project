@@ -14,9 +14,26 @@
 
 		{% if user.is_authenticated %}
 			<li>
-				<a href="{% url 'auth:edit' %}">
-					{{ user.first_name|default:'пользователь' }}
-				</a>
+				<div class="dropdown">
+
+					<a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+					   data-bs-toggle="dropdown" aria-expanded="false">
+					{{ user.first_name|default:'Пользователь' }}
+					</a>
+
+					<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="min-width: 7rem">
+						<li>
+							<a class="dropdown-item" href="{% url 'auth:edit' %}">
+								профиль
+							</a>
+						</li>
+						<li>
+							<a class="dropdown-item" href="{% url 'ordersapp:orders_list' %}">
+								заказы
+							</a>
+						</li>
+					</ul>
+				</div>
 			</li>
 		{% endif %}
 
