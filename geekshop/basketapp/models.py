@@ -4,7 +4,18 @@ from geekshop import settings
 from mainapp.models import Product
 
 
+class BasketQuerySet(models.QuerySet):
+
+    def delete(self, *args, **kwargs):
+        for object in self:
+            object.product.quantity += object.quantity
+            object.product.save()
+        super(BasketQuerySet, self).delete(*args, **kwargs)
+
+
 class Basket(models.Model):
+    objects = BasketQuerySet.as_manager()
+
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
@@ -24,6 +35,7 @@ class Basket(models.Model):
         verbose_name='время',
         auto_now_add=True,
     )
+
     is_deleted = models.BooleanField(
         default=False
     )
@@ -34,6 +46,14 @@ class Basket(models.Model):
     class Meta:
          verbose_name = 'корзина'
          verbose_name_plural = 'товар в корзине'
+
+    @staticmethod
+    def get_item(pk):
+        return Basket.objects.filter(pk=pk).first()
+
+    @staticmethod
+    def get_item(pk):
+        return Basket.objects.filter(pk=pk).first()
 
     @property
     def product_cost(self):
@@ -50,3 +70,17 @@ class Basket(models.Model):
         _items = Basket.objects.filter(user=self.user)
         _total_cost = sum(list(map(lambda x: x.product_cost, _items)))
         return _total_cost
+
+    def delete(self):
+        self.product.quantity += self.quantity
+        self.product.save()
+        super(self.__class__, self).delete()
+
+    def save(self, *args, **kwargs):
+        if self.pk:
+            self.product.quantity -= self.quantity - self.__class__.get_item(self.pk).quantity
+        else:
+            self.product.quantity -= self.quantity
+
+        self.product.save()
+        super(self.__class__, self).save(*args, **kwargs)
