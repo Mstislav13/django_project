@@ -56,13 +56,14 @@ window.onload = function () {
         }
     }
 
-
-
     function deleteOrderItem(row) {
        var target_name= row[0].querySelector('input[type="number"]').name;
        orderitem_num = parseInt(target_name.replace('orderitems-', '').replace('-quantity', ''));
        delta_quantity = -quantity_arr[orderitem_num];
-       orderSummaryUpdate(price_arr[orderitem_num], delta_quantity);
+       quantity_arr[orderitem_num] = 0;
+       if (!isNaN(price_arr[orderitem_num]) && !isNaN(delta_quantity)) {
+           orderSummaryUpdate(price_arr[orderitem_num], delta_quantity);
+       }
     }
 
     $('.formset_row').formset({
@@ -72,9 +73,44 @@ window.onload = function () {
        removed: deleteOrderItem
     });
 
+    function orderSummaryRecalc() {
+        order_total_quantity = 0;
+        order_total_price = 0;
+
+        for (var i=0; i < total_forms; i++){
+            order_total_quantity += quantity_arr[i];
+            order_total_price += quantity_arr[i] * price_arr[i];
+        }
+        $('.order_total_quantity').html(order_total_quantity.toString());
+        $('.order_total_cost').html(Number(order_total_price.toFixed(2).toString()));
+    }
+
     $('.order_form select').change(function () {
        var target = event.target;
-       console.log(target);
+       orderitem_num = parseInt(target.name.replace('orderitems-', '').replace('-product', ''));
+       var orderitem_product_pk = target.options[target.selectedIndex].value;
+
+       if (orderitem_product_pk) {
+           $.ajax({
+               url: '/order/product/' + orderitem_product_pk + '/price',
+               success: function (data) {
+                   if (data.price) {
+                       price_arr[orderitem_num] = parseFloat(data.price);
+                       if (isNaN(quantity_arr[orderitem_num])) {
+                           quantity_arr[orderitem_num] = 0;
+                       }
+                       var price_html = '<span>' + data.price.toString().replace('.', ',') + '</span> руб';
+                       var current_tr = $('.order_form table').find('tr:eq(' + (orderitem_num + 1) + ')');
+                       current_tr.find('td:eq(2)').html(price_html);
+
+                       if (isNaN(current_tr.find('input[type="number"]').val())) {
+                           current_tr.find('input[type="number"]').val(0);
+                       }
+                       orderSummaryRecalc();
+                   }
+               }
+           });
+       }
     });
 
 };
