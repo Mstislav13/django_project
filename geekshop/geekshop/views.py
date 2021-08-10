@@ -7,7 +7,7 @@ from mainapp.models import Product
 def index(request):
     title = 'магазин'
 
-    products = Product.objects.all()[:5]
+    products = Product.objects.filter(is_deleted=False, category__is_deleted=False)[:5]
 
     context = {
         'title': title,
@@ -18,11 +18,11 @@ def index(request):
 def contacts(request):
     title = 'контакты'
 
-    if request.user.is_authenticated:
-        basket = Basket.objects.filter(user=request.user)
+    # if request.user.is_authenticated:
+    #     basket = Basket.objects.filter(user=request.user)
 
     context = {
         'title': title,
-        'basket': basket,
+        # 'basket': basket,
     }
     return render(request, 'geekshop/contact.html', context=context)
