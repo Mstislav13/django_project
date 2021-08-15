@@ -21,7 +21,7 @@ def get_same_products(hot_product):
     return same_products
 
 def products(request, pk=None, page=1):
-    title = 'товары.каталог'
+    title = 'товары/каталог'
 
     hot_product = get_hot_product()
     same_products = get_same_products(hot_product)[:3]
@@ -66,7 +66,7 @@ def products(request, pk=None, page=1):
     return render(request=request, template_name='mainapp/products.html', context=context)
 
 def product(request, pk):
-    title = 'продукты'
+    title = 'товары'
 
     context = {
         'title': title,
