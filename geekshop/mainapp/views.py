@@ -21,7 +21,7 @@ def get_same_products(hot_product):
     return same_products
 
 def products(request, pk=None, page=1):
-    title = 'товары/каталог'
+    title = 'Товары/Каталог'
 
     hot_product = get_hot_product()
     same_products = get_same_products(hot_product)[:3]
