@@ -6,23 +6,26 @@ from basketapp.models import Basket
 from mainapp.models import ProductCategory, Product
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
+
 def get_basket(user):
     if user.is_authenticated:
         return Basket.objects.filter(user=user)
     else:
         return []
 
+
 def get_hot_product():
     products = Product.objects.all()
     return random.sample(list(products), 1)[0]
+
 
 def get_same_products(hot_product):
     same_products = Product.objects.filter(category=hot_product.category).exclude(pk=hot_product.pk)
     return same_products
 
+
 def products(request, pk=None, page=1):
     title = 'товары/каталог'
-    title = 'Товары/Каталог'
 
     hot_product = get_hot_product()
     same_products = get_same_products(hot_product)[:3]
@@ -65,6 +68,7 @@ def products(request, pk=None, page=1):
         'products': products,
     }
     return render(request=request, template_name='mainapp/products.html', context=context)
+
 
 def product(request, pk):
     title = 'товары'
