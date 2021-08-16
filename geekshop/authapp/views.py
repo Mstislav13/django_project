@@ -85,7 +85,7 @@ def register(request):
 
     context = {
         'title': title,
-        'register_form': register_form
+        'register_form': register_form,
     }
     return render(request, 'authapp/register.html', context)
 
