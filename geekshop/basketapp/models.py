@@ -21,7 +21,7 @@ class Basket(models.Model):
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
         related_name='basket',
-        verbose_name='пользователь',
+        verbose_name='корзина',
     )
     product = models.ForeignKey(
         Product,
