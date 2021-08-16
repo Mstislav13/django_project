@@ -735,7 +735,7 @@ td:first-child {
 	color:  #212121;
 	font-size: 62px;
 	font-weight: 100;
-	text-align: left;
+	text-align: center;
 	margin-top: 142px;
 	text-transform: uppercase;
 	/*text-transform: capitalize;*/
@@ -771,7 +771,7 @@ td:first-child {
 }
 
 .top_contacts {
-    margin-right: 80px;
+    margin-right: 50px;
 }
 
 .contacts {
