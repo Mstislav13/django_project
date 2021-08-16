@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'ordersapp',
 
     'social_django',
+
     'debug_toolbar',
     'template_profiler_panel',
     'django_extensions',
@@ -207,6 +208,7 @@ AUTHENTICATION_BACKENDS = (
 #
 # SOCIAL_AUTH_VK_OAUTH2_KEY = VK['SOCIAL_AUTH_VK_OAUTH2_ID']
 # SOCIAL_AUTH_VK_OAUTH2_SECRET = VK['SOCIAL_AUTH_VK_OAUTH2_KEY']
+
 
 SOCIAL_AUTH_VK_OAUTH2_KEY = env('SOCIAL_AUTH_VK_OAUTH2_ID')
 SOCIAL_AUTH_VK_OAUTH2_SECRET = env('SOCIAL_AUTH_VK_OAUTH2_KEY')
