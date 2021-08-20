@@ -26,7 +26,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -155,6 +155,7 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "geekshop", "static"),
@@ -200,18 +201,6 @@ AUTHENTICATION_BACKENDS = (
 
 SOCIAL_AUTH_VK_OAUTH2_KEY = env('SOCIAL_AUTH_VK_OAUTH2_ID')
 SOCIAL_AUTH_VK_OAUTH2_SECRET = env('SOCIAL_AUTH_VK_OAUTH2_KEY')
-
-if os.name == 'posix':
-   CACHE_MIDDLEWARE_ALIAS = 'default'
-   CACHE_MIDDLEWARE_SECONDS = 120
-   CACHE_MIDDLEWARE_KEY_PREFIX = 'geekshop'
-
-   CACHES = {
-       'default': {
-           'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
-           'LOCATION': '127.0.0.1:11211',
-       }
-   }
 
 LOW_CACHE = False
 
